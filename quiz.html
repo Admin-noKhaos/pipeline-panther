@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Health Quiz - Pipeline Panther</title>
+    <link rel="icon" type="image/png" href="pipeline panther logo no text.png">
+    <link rel="apple-touch-icon" href="pipeline panther logo no text.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quiz-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 5L35 20L50 25L35 30L30 45L25 30L10 25L25 20L30 5Z" stroke="url(#preloaderGradient)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="preloaderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#d84315;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="preloader-text">Pipeline Panther</div>
+            <div class="preloader-progress">
+                <div class="preloader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 3L19 10L26 13L19 16L16 23L13 16L6 13L13 10L16 3Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">Pipeline Panther</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        <div class="quiz-progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Intro Screen -->
+        <div class="quiz-screen active" id="intro">
+            <div class="quiz-content">
+                <div class="quiz-intro-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 6L38 20L52 26L38 32L32 46L26 32L12 26L26 20L32 6Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="32" cy="26" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <h1 class="quiz-title">Pipeline Health Assessment</h1>
+                <p class="quiz-intro-text">Answer 8 quick questions to see how healthy your pipeline really is. Takes under 2 minutes.</p>
+                <button class="btn btn-primary btn-large" onclick="startQuiz()">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- Question 1 -->
+        <div class="quiz-screen" id="q1" data-question="1">
+            <div class="quiz-content">
+                <div class="question-header">
+                    <span class="question-number">Question 1 of 8</span>
+                    <h2 class="question-title">What best describes your role?</h2>
+                </div>
+                <div class="options-list">
+                    <label class="option-item">
+                        <input type="radio" name="q1" value="VP Sales / Head of Sales / CRO" required>
+                        <span class="option-text">VP Sales / Head of Sales / CRO</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q1" value="Head of Revenue Operations / Sales Operations" required>
+                        <span class="option-text">Head of Revenue Operations / Sales Operations</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q1" value="CIO / VP IT / Head of Systems" required>
+                        <span class="option-text">CIO / VP IT / Head of Systems</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q1" value="Founder / CEO" required>
+                        <span class="option-text">Founder / CEO</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q1" value="Other" required>
+                        <span class="option-text">Other</span>
+                    </label>
+                </div>
+                <button class="btn btn-primary" onclick="nextQuestion(1)">Next</button>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="quiz-screen" id="q2" data-question="2">
+            <div class="quiz-content">
+                <div class="question-header">
+                    <span class="question-number">Question 2 of 8</span>
+                    <h2 class="question-title">How many full‑time B2B sales reps do you have closing deals?</h2>
+                </div>
+                <div class="options-list">
+                    <label class="option-item">
+                        <input type="radio" name="q2" value="1–2 reps" required>
+                        <span class="option-text">1–2 reps</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q2" value="3–5 reps" required>
+                        <span class="option-text">3–5 reps</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q2" value="6–15 reps" required>
+                        <span class="option-text">6–15 reps</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q2" value="16+ reps" required>
+                        <span class="option-text">16+ reps</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q2" value="We don't really have dedicated reps yet" required>
+                        <span class="option-text">We don't really have dedicated reps yet</span>
+                    </label>
+                </div>
+                <div class="quiz-nav">
+                    <button class="btn btn-secondary" onclick="prevQuestion(2)">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion(2)">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="quiz-screen" id="q3" data-question="3">
+            <div class="quiz-content">
+                <div class="question-header">
+                    <span class="question-number">Question 3 of 8</span>
+                    <h2 class="question-title">Roughly how many employees does your company have?</h2>
+                </div>
+                <div class="options-list">
+                    <label class="option-item">
+                        <input type="radio" name="q3" value="10–29" required>
+                        <span class="option-text">10–29</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q3" value="30–49" required>
+                        <span class="option-text">30–49</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q3" value="50–249" required>
+                        <span class="option-text">50–249</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q3" value="250–999" required>
+                        <span class="option-text">250–999</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q3" value="1,000+" required>
+                        <span class="option-text">1,000+</span>
+                    </label>
+                </div>
+                <div class="quiz-nav">
+                    <button class="btn btn-secondary" onclick="prevQuestion(3)">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion(3)">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="quiz-screen" id="q4" data-question="4">
+            <div class="quiz-content">
+                <div class="question-header">
+                    <span class="question-number">Question 4 of 8</span>
+                    <h2 class="question-title">What are you primarily using today to manage deals and pipeline?</h2>
+                </div>
+                <div class="options-list">
+                    <label class="option-item">
+                        <input type="radio" name="q4" value="Salesforce" required>
+                        <span class="option-text">Salesforce</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q4" value="HubSpot" required>
+                        <span class="option-text">HubSpot</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q4" value="Microsoft Dynamics / Zoho / Pipedrive / other modern CRM" required>
+                        <span class="option-text">Microsoft Dynamics / Zoho / Pipedrive / other modern CRM</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q4" value="ERP system (NetSuite, SAP, Oracle, etc.)" required>
+                        <span class="option-text">ERP system (NetSuite, SAP, Oracle, etc.)</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q4" value="Spreadsheets / email / homegrown tools" required>
+                        <span class="option-text">Spreadsheets / email / homegrown tools</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q4" value="Nothing formal yet" required>
+                        <span class="option-text">Nothing formal yet</span>
+                    </label>
+                </div>
+                <div class="quiz-nav">
+                    <button class="btn btn-secondary" onclick="prevQuestion(4)">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion(4)">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="quiz-screen" id="q5" data-question="5">
+            <div class="quiz-content">
+                <div class="question-header">
+                    <span class="question-number">Question 5 of 8</span>
+                    <h2 class="question-title">What's the biggest issue with your current CRM/ERP setup right now?</h2>
+                </div>
+                <div class="options-list">
+                    <label class="option-item">
+                        <input type="radio" name="q5" value="Forecast is off / no clear view of what's really in the pipeline" required>
+                        <span class="option-text">Forecast is off / no clear view of what's really in the pipeline</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q5" value="Reps don't use it properly / low adoption" required>
+                        <span class="option-text">Reps don't use it properly / low adoption</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q5" value="Data is a mess (duplicates, missing fields, inconsistent)" required>
+                        <span class="option-text">Data is a mess (duplicates, missing fields, inconsistent)</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q5" value="We outgrew the current setup and it doesn't fit how we sell anymore" required>
+                        <span class="option-text">We outgrew the current setup and it doesn't fit how we sell anymore</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q5" value="Honestly, it's working fine for us right now" required>
+                        <span class="option-text">Honestly, it's working fine for us right now</span>
+                    </label>
+                </div>
+                <div class="quiz-nav">
+                    <button class="btn btn-secondary" onclick="prevQuestion(5)">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion(5)">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="quiz-screen" id="q6" data-question="6">
+            <div class="quiz-content">
+                <div class="question-header">
+                    <span class="question-number">Question 6 of 8</span>
+                    <h2 class="question-title">Which best describes your plans for CRM/ERP implementation?</h2>
+                </div>
+                <div class="options-list">
+                    <label class="option-item">
+                        <input type="radio" name="q6" value="We're actively looking for partners to help us in the next 3 months" required>
+                        <span class="option-text">We're actively looking for partners to help us in the next 3 months</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q6" value="We're actively looking for partners to help us in the next 4–6 months" required>
+                        <span class="option-text">We're actively looking for partners to help us in the next 4–6 months</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q6" value="We know we need to fix / revamp this in the next 6–12 months" required>
+                        <span class="option-text">We know we need to fix / revamp this in the next 6–12 months</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q6" value="We're exploring options, but no clear plan or budget yet" required>
+                        <span class="option-text">We're exploring options, but no clear plan or budget yet</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q6" value="We have no plans or budget for this right now" required>
+                        <span class="option-text">We have no plans or budget for this right now</span>
+                    </label>
+                </div>
+                <div class="quiz-nav">
+                    <button class="btn btn-secondary" onclick="prevQuestion(6)">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion(6)">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="quiz-screen" id="q7" data-question="7">
+            <div class="quiz-content">
+                <div class="question-header">
+                    <span class="question-number">Question 7 of 8</span>
+                    <h2 class="question-title">How often does your forecast surprise you versus what deals actually close?</h2>
+                </div>
+                <div class="options-list">
+                    <label class="option-item">
+                        <input type="radio" name="q7" value="Almost every quarter – it's way off" required>
+                        <span class="option-text">Almost every quarter – it's way off</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q7" value="Often – more off than on" required>
+                        <span class="option-text">Often – more off than on</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q7" value="Sometimes – a bit off, but manageable" required>
+                        <span class="option-text">Sometimes – a bit off, but manageable</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q7" value="Rarely – usually pretty close" required>
+                        <span class="option-text">Rarely – usually pretty close</span>
+                    </label>
+                </div>
+                <div class="quiz-nav">
+                    <button class="btn btn-secondary" onclick="prevQuestion(7)">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion(7)">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="quiz-screen" id="q8" data-question="8">
+            <div class="quiz-content">
+                <div class="question-header">
+                    <span class="question-number">Question 8 of 8</span>
+                    <h2 class="question-title">How much do you trust the data in your CRM/ERP to make decisions?</h2>
+                </div>
+                <div class="options-list">
+                    <label class="option-item">
+                        <input type="radio" name="q8" value="I don't trust it – we double‑check in spreadsheets or gut" required>
+                        <span class="option-text">I don't trust it – we double‑check in spreadsheets or gut</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q8" value="Somewhat – we spot‑check and adjust a lot" required>
+                        <span class="option-text">Somewhat – we spot‑check and adjust a lot</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q8" value="Mostly – we can rely on it for most decisions" required>
+                        <span class="option-text">Mostly – we can rely on it for most decisions</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="q8" value="Completely – we run the business off it with confidence" required>
+                        <span class="option-text">Completely – we run the business off it with confidence</span>
+                    </label>
+                </div>
+                <div class="quiz-nav">
+                    <button class="btn btn-secondary" onclick="prevQuestion(8)">Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion(8)">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="quiz-screen" id="contact-form">
+            <div class="quiz-content">
+                <div class="question-header">
+                    <h2 class="question-title">Get Your Results</h2>
+                    <p class="question-subtitle">Enter your details to receive your personalized pipeline health score.</p>
+                </div>
+                <form class="contact-form" id="quizForm" onsubmit="submitQuiz(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Company Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="url" id="website" name="website">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large btn-full">Get My Results</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="quiz-screen" id="results">
+            <div class="quiz-content">
+                <div id="resultsContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
