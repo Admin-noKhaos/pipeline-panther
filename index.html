@@ -70,14 +70,20 @@
         }
 
         .hero-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
             align-items: center;
+            text-align: center;
         }
 
         .hero-content {
-            max-width: 560px;
+            max-width: 800px;
+        }
+        
+        .quiz-container {
+            width: 100%;
+            max-width: 700px;
         }
 
         .eyebrow {
@@ -105,7 +111,7 @@
             margin-bottom: 2rem;
         }
 
-        .quiz-container {
+        .quiz-card {
             background: var(--white);
             border-radius: 16px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -266,16 +272,6 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-wrapper {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                text-align: center;
-            }
-
             .hero-title {
                 font-size: 2.25rem;
             }
@@ -333,11 +329,13 @@
                     </p>
                 </div>
                 <div class="quiz-container">
+                    <div class="quiz-card">
                     <div class="quiz-header">
                         <span class="quiz-header-text">Start Your Free Assessment</span>
                     </div>
                     <div class="quiz-iframe-container">
                         <iframe src="https://api.leadconnectorhq.com/widget/quiz/C3QIGB14yzckSIgO5b1Z" scrolling="no" id="C3QIGB14yzckSIgO5b1Z" title="quiz"></iframe>
+                    </div>
                     </div>
                 </div>
             </div>
