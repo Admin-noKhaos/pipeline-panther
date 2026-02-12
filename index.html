@@ -75,22 +75,23 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            padding: 4rem 0 3rem;
-            display: flex;
-            align-items: center;
+            padding: 2.5rem 0 2rem;
         }
 
         .hero-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 1.5rem;
             align-items: center;
             text-align: center;
         }
 
         .hero-content {
             max-width: 800px;
+        }
+
+        .eyebrow {
+            margin-bottom: 0.5rem;
         }
         
         .quiz-container {
@@ -109,18 +110,22 @@
         }
 
         .hero-title {
-            font-size: 2.75rem;
+            font-size: 2.5rem;
             font-weight: 800;
             line-height: 1.15;
             color: var(--text-primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title .highlight {
+            color: var(--accent-orange);
         }
 
         .hero-subtitle {
             font-size: 1.125rem;
             color: var(--text-secondary);
             line-height: 1.7;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .quiz-iframe-container iframe {
@@ -311,9 +316,9 @@
             <div class="hero-wrapper">
                 <div class="hero-content">
                     <span class="eyebrow">60‑Second Quiz for B2B Sales Leaders</span>
-                    <h1 class="hero-title">Find Out How Much Revenue You're Losing Each Quarter Because of a Leaky Pipeline.</h1>
+                    <h1 class="hero-title">Find Out <span class="highlight">How Much Revenue You're Losing</span> Each Quarter Because of a Leaky Pipeline.</h1>
                     <p class="hero-subtitle">
-                        Take a 60‑second Pipeline Revenue Leak Assessment to see how much your current CRM/ERP setup (or lack of set-up) may be costing you every quarter, and get a 90‑Day Revamp Blueprint showing exactly what to fix.
+                        And get a 90‑Day Revamp Blueprint showing exactly what to fix.
                     </p>
                 </div>
                 <div class="quiz-container">
